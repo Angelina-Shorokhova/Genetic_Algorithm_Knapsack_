@@ -1,16 +1,8 @@
 #include <iostream>
-#include <fstream> 
-#include <string>
+#include "Parser.h"
 using namespace std;
 
-class Parser{
-protected:
-ifstream file;
-public:   
-int n, K;
-int* v;
-int* w;
-Parser(string f_name){
+Parser::Parser(string f_name){
 file.open(f_name);
 if (file.is_open()){
   string s;   
@@ -31,10 +23,9 @@ else
   cout<<"Error:file is close"<<endl;
 }
 
-~Parser(){
+Parser::~Parser(){
 file.close();
 delete[]v;
 delete[]w;
 }
  
-};
