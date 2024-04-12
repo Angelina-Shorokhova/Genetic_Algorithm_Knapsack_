@@ -1,13 +1,10 @@
-#include "Parser.cpp"
+#include "Solver.h"
 #include <iostream>
-#include <ctime>
-#include <math.h>
-#include <vector>
+
 using namespace std;
 
-class Solver: public  Parser{
-    public:
-    int competition(int q,int x,int y,vector<vector<int>> t){
+
+    int Solver::competition(int q,int x,int y,vector<vector<int>> t){
     int i,j;
     srand(q+35);
     i=rand()%x;
@@ -20,7 +17,7 @@ class Solver: public  Parser{
       return j;
     }
     
-    Solver(string f_name): Parser(f_name){
+    Solver::Solver(string f_name): Parser(f_name){
     int num=170; //population size (per generation)
     int num_generation=7000;//number of generations
     //these numbers must be high enough for the solution to converge to the optimal one
@@ -137,4 +134,3 @@ class Solver: public  Parser{
      for(int l=0;l<n;l++)
          cout<<vec[max][l]<<" ";
     }
-};
