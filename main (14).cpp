@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "Solver.cpp"
+#include "Solver.h"
 using namespace std;
 
 int main()
@@ -9,4 +9,3 @@ int main()
 Solver("ks_4_0");
  return 0;
 }
-
